@@ -1,0 +1,26 @@
+﻿@model Moses_Recipe.Models.Pie
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>@Model.Name</h1>
+<div class="thumbnail">
+    <img src="@Model.ImageUrl" alt="@Model.Name" />
+    <h3>@Model.Price.ToString("c")</h3>
+    <h3 class="text-right">
+        <a href="#">@Model.Name</a>
+    </h3>
+    <h3>@Model.ShortDescription</h3>
+    <p>@Model.LongDescription</p>
+    <div class="addToCart">
+        <p class="button">
+            <a class="btn btn-primary"
+               asp-controller="ShoppingCart"
+               asp-action="AddToShoppingCart"
+               asp-route-pieId="@Model.PieId">
+                Add to Cart
+            </a>
+        </p>
+    </div>
+</div>
+
